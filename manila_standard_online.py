@@ -21,7 +21,7 @@ def sections_mst():
     driver.get('https://manilastandard.net/')
 
     # element = driver.find_element(By.CLASS_NAME, 'vc_row.tdi_268.wpb_row.td-pb-row.tdc-element-style')
-    element = driver.find_element(By.CLASS_NAME, 'vc_row.tdi_279.wpb_row.td-pb-row.tdc-element-style')
+    element = driver.find_element(By.CLASS_NAME, 'vc_row.tdi_281.wpb_row.td-pb-row.tdc-element-style')
     ele = element.find_elements(By.TAG_NAME, 'a')
 
     for i in ele:
