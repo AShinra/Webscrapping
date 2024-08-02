@@ -1,4 +1,3 @@
-# import webdriver 
 import openpyxl.workbook
 from selenium.webdriver.common.by import By
 from selenium import webdriver
@@ -11,25 +10,9 @@ import time
 import openpyxl
 import pandas as pd
 import subprocess
-from subprocess import CREATE_NO_WINDOW
+from get_driver import get_driver
 
-
-
-
-def get_driver():
-    options = Options()
-    options.add_argument("--headless")
-    options.add_argument("--log-level=3")
-    # return webdriver.Chrome(service=Service(ChromeDriverManager(chrome_type=ChromeType.CHROMIUM).install()), options=options)
-    return webdriver.Chrome(options=options)
-
-def compare_data(archive_file, url):
-
-
-
-    return
-
-def get_sections():
+def sections_mst():
 
     print('Gathering Sections..........')
     sections = {}
@@ -54,12 +37,11 @@ def get_sections():
     return sections
 
 
-def scraper(sections):
+def scraper_mst(sections):
 
     # sections = {'News':'https://manilastandard.net/category/news'}
 
     _file = Path(__file__).parent/f'Data/Manila Standard Online/Archive/Archive.xlsx'
-    # archive_xlsx = openpyxl.load_workbook(_file)
     archive_data = pd.read_excel(_file)
 
     df = pd.DataFrame()
@@ -72,7 +54,6 @@ def scraper(sections):
     for k, v in sections.items():
         driver.get(v)
 
-        # driver.execute_script("window.scrollTo(0, 1080)")
         html = driver.find_element(By.TAG_NAME, 'html')
 
         count = 0
@@ -118,11 +99,3 @@ def scraper(sections):
     # save extracted new extracted data to excel
     df.to_excel('Data/Manila Standard Online/New/Extracted_Links.xlsx', index=False)
     return
-
-
-# main process
-if __name__ == '__main__':
-    
-    # run mst scraper
-    sections = get_sections()
-    scraper(sections)
