@@ -121,27 +121,8 @@ def scraper(sections):
 
 
 # main process
-# scraper()
-sections = get_sections()
-scraper(sections)
-
-
-
-
-# data = {
-#   "name": ["Sally", "Mary", "John"],
-#   "age": [50, 40, 30]
-# }
-
-# df = pd.DataFrame(data)
-# print(df)
-
-# if any(df.name == 'ally'):
-# 	print('Found')
-# else:
-# 	data = [['ally','25']]
-# 	df1 = pd.DataFrame(data, columns=['name','age'])
-
-# new_df = df1.append(df)
-# new_df.reset_index(drop=True, inplace=True)
-# print(new_df)
+if __name__ == '__main__':
+    
+    # run mst scraper
+    sections = get_sections()
+    scraper(sections)
