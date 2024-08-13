@@ -9,9 +9,7 @@ from scraper_mst import mst
 
 st.header('Links Scraper')
 
-col1, col2 = st.columns(2)
-
-with col1:
+with st.sidebar:
 
     pub_sel = st.radio(
         'Select Online Publication to scrape',
