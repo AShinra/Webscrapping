@@ -13,22 +13,29 @@ def options():
     print('8 - Malaya Business Insight')
     print('9 - Daily Tribune')
     print('0 - Exit')
+    
+    my_option = input('Please select Online Site to collect links ===>>> ')
+
+    return my_option
+
+def main(my_option):
+
+    if my_option == '1':
+        print('Development Phase')
+
+    elif my_option == '2':
+        # sections = sections_ps()
+        sections = {}
+        scraper_ps(sections)
+        
+    elif my_option == '7':
+        sections = sections_mst()
+        scraper_mst(sections)
+
     return
 
-options()
+my_option = options()
+main(my_option)
 
-my_option = input('Please select Online Site to collect links ===>>> ')
-
-if my_option == 1:
-    print('Development Phase')
-
-elif my_option == '2':
-    sections = sections_ps()
-    # sections = {}
-    scraper_ps(sections)
-    
-elif my_option == '7':
-    sections = sections_mst()
-    scraper_mst(sections)
 
 

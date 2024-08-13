@@ -57,7 +57,7 @@ def scraper_mst(sections):
         html = driver.find_element(By.TAG_NAME, 'html')
 
         count = 0
-        while count < 2:
+        while count < 4:
             html.send_keys(Keys.END)
             time.sleep(5)
             count += 1
