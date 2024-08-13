@@ -11,7 +11,7 @@ from scraper_mst import mst
 with st.sidebar:
 
     st.header('Links Scraper')
-    
+
     pub_sel = st.radio(
         'Select Online Publication to scrape',
         ('Manila Bulletin',
@@ -26,9 +26,10 @@ with st.sidebar:
 
     pro = st.button(label='Process')
 
-    if pro:
-        if pub_sel == 'Manila Standard':
-            mst()
 
-        else:
-            st.error('Development Phase')
+if pro:
+    if pub_sel == 'Manila Standard':
+        mst()
+
+    else:
+        st.error('Development Phase')
