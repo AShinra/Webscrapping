@@ -40,4 +40,4 @@ def mst():
 
     df = pd.DataFrame({'Date':_dates, 'Title':_titles, 'URL':_urls})
 
-    st.dataframe(df)
+    st.dataframe(df, height=max)
