@@ -40,5 +40,5 @@ def mst():
 
     df = pd.DataFrame({'Date':_dates, 'Title':_titles, 'URL':_urls})
 
-    st.success('Total links collected ===>>> {df.shape[0]}')
+    st.success(f'Total links collected ===>>> {df.shape[0]}')
     st.dataframe(df)
