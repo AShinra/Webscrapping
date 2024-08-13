@@ -7,10 +7,11 @@ import re
 # scrapers
 from scraper_mst import mst
 
-st.header('Links Scraper')
 
 with st.sidebar:
 
+    st.header('Links Scraper')
+    
     pub_sel = st.radio(
         'Select Online Publication to scrape',
         ('Manila Bulletin',
