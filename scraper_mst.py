@@ -10,18 +10,16 @@ def mst():
     _dates = []
     _titles = []
     _urls = []
+    
+    soup = BeautifulSoup(html_content, 'html.parser')
+
     for x in range(1, 31):
-    # for url in url_list:
         url = f'https://www.manilastandard.net/page/{x}?s='
         response = requests.get(url)
 
         if response.status_code == 200:
             html_content = response.content
-            # st.write(html_content)
 
-            soup = BeautifulSoup(html_content, 'html.parser')
-
-            # articles = soup.select('.entry-title.td-module-title')
             articles = soup.select('.td-module-meta-info')
             for article in articles:
                 _date = article.find('time').text
